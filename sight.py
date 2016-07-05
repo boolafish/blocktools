@@ -19,7 +19,7 @@ def parse(blockchain):
 
 	print ''
 	print 'Reached End of Field'
-	print 'Parsed %s blocks', counter
+	print 'Parsed %s blocks' % counter
 
 def main():
 	if len(sys.argv) < 2:

@@ -31,8 +31,14 @@ def varint(stream):
 		return uint4(stream)
 	if size == 0xff:
 		return uint8(stream)
+	
 	return -1
 
 def hashStr(bytebuffer):
 	return ''.join(('%02x'%ord(a)) for a in bytebuffer)
 
+def hashStrLE(bytebuffer):
+	return ''.join([('%02x'%ord(a)) for a in bytebuffer][::-1])
+
+def intLE(num):
+	return struct.pack("<i", (num) % 2**32).encode('hex')
